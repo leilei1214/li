@@ -18,6 +18,8 @@ inputText = (event)=> {
     }
     
 }
+
+
 ccc(){
     console.log("111");
 }
@@ -98,6 +100,9 @@ fc1(e){
     
 }
 render() {
+    const  listdata = list.map((data)=>{
+    return<div> <div><img src={require("./"+data.img+".png")} alt="111" /><span>{data.name}</span></div></div>
+})
     return(
         　<div>
    <div className="content">
@@ -127,14 +132,16 @@ render() {
               </ul>
           </div>
           <div id="good">
-
+                {listdata}
           </div>
       </div>
 </div>
 <div className="top" onClick={this.top}><i className="fa fa-angle-up"></i></div> 
 </div>
+
     )
 
 }
+
 }
 
