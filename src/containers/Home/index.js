@@ -7,83 +7,113 @@ import list2 from './list2.json'
 import list3 from './list3.json'
 export default class Home extends Component{
 state = {
-    message: "",
-    messageList: []
+    listdata:"123"
 };
-inputText = (event)=> {
-    const { value } = event.target;
-    if(event.keyCode == 13){
-        this.state.message = value;
-        console.log( this.state.message)
+onKeyUp = (event)=> {
+    let listvalue =" "
+    if(event.charCode ==13){
+        const a =event.target.value;
+        list.map((data)=>{
+            if (data.name == event.target.value) {
+                listvalue=(
+                <div>
+                <img src={require("./"+data.img+".png")} alt="111" />
+                <span>{data.name}</span>
+                </div> )
+            } 
+        }
+        )
+        list1.map((data)=>{
+            if (data.name == event.target.value) {
+                listvalue=(
+                <div>
+                <img src={require("./"+data.img+".png")} alt="111" />
+                <span>{data.name}</span>
+                </div> )
+            } 
+        }
+        )
+        list2.map((data)=>{
+            if (data.name == event.target.value) {
+                listvalue=(
+                <div>
+                <img src={require("./"+data.img+".png")} alt="111" />
+                <span>{data.name}</span>
+                </div> )
+            } 
+        }
+        )        
+        list3.map((data)=>{
+            if (data.name == event.target.value) {
+                listvalue=(
+                <div>
+                <img src={require("./"+data.img+".png")} alt="111" />
+                <span>{data.name}</span>
+                </div> )
+            } 
+        }
+        ) 
+
     }
-    
+    ReactDOM.render(
+        <div>{listvalue}</div>,
+        document.getElementById("good") ,
+    )
+        // console.log( this.state)
+        // const {listdata} =  this.state;
+        //  this.setState({listdata:<div>{listvalue}</div>})
 }
 
-
-ccc(){
-    console.log("111");
-}
 top (e) {
     window.scrollTo({top: 0, left: 0, behavior: 'smooth' });
 
 };
-fc2(e){
+fc2 = (e) =>{
     e.preventDefault();
-    const  listdata = list1.map((data)=>
-        // images = require(data.img),
+    const  listvalue = list1.map((data)=>
         <div>
             <img src={require("./"+data.img+".png")} alt="111" />
             <span>{data.name}</span>
         </div>
-        // )
 
     );
-    ReactDOM.render(
-        <div>{listdata}</div>,
-        document.getElementById("good") ,
-        console.log(listdata)
-    )
+    const {listdata} =  this.state;
+    this.setState({listdata:<div>{listvalue}</div>})
     
 }
-fc3(e){
+fc3 = (e)=>{
     e.preventDefault();
-    const  listdata = list2.map((data)=>
-        // images = require(data.img),
+    const  listvalue = list2.map((data)=>
         <div>
             <img src={require("./"+data.img+".png")} alt="111" />
             <span>{data.name}</span>
         </div>
-        // )
 
     );
-    ReactDOM.render(
-        <div>{listdata}</div>,
-        document.getElementById("good") ,
-        console.log(listdata)
-    )
+    const {listdata} =  this.state;
+
+    this.setState({listdata:<div>{listvalue}</div>})
+
     
 }
-fc4(e){
+fc4 = (e) =>{
     e.preventDefault();
-    const  listdata = list3.map((data)=>
-        // images = require(data.img),
+    const  listvalue = list3.map((data)=>
         <div>
             <img src={require("./"+data.img+".png")} alt="111" />
             <span>{data.name}</span>
         </div>
-        // )
 
     );
-    ReactDOM.render(
-        <div>{listdata}</div>,
-        document.getElementById("good") ,
-        console.log(listdata)
-    )
+    const {listdata} =  this.state;
+
+    this.setState({listdata:<div>{listvalue}</div>})
+
     
 }
-fc1(e){
+fc1 = (e)=>{
     e.preventDefault();
-    const  listdata = list.map((data)=>
+    const  listvalue= list.map((data)=>
         // images = require(data.img),
         <div>
             <img src={require("./"+data.img+".png")} alt="111" />
@@ -92,17 +122,29 @@ fc1(e){
         // )
 
     );
-    ReactDOM.render(
-        <div>{listdata}</div>,
-        document.getElementById("good") ,
-        console.log(listdata)
-    )
+    
+    const {listdata} =  this.state.listdata;
+    this.setState({listdata:<div>{listvalue}</div>})
     
 }
 render() {
-    const  listdata = list.map((data)=>{
-    return<div> <div><img src={require("./"+data.img+".png")} alt="111" /><span>{data.name}</span></div></div>
-})
+    const {listdata} = this.state;
+    // init();
+     if(this.state.listdata=="123"){
+         const  listvalue= list.map((data)=>
+         <div>
+             <img src={require("./"+data.img+".png")} alt="111" />
+             <span>{data.name}</span>
+         </div>
+     
+     );
+     const {listdata} =  this.state.listdata;
+     this.setState({listdata:<div>{listvalue}</div>})
+    }
+
+
+    // this.setState({listdata:<div>{listdata}</div>})
+
     return(
         　<div>
    <div className="content">
@@ -112,6 +154,7 @@ render() {
         <input
         value ={this.state.inputvalue}
         onChange = { this.inputText }
+        onKeyPress={this.onKeyUp.bind(this)}
          type="text" placeholder="Search.." name="search" />
         <span>&#10005;</span>
     </div>
