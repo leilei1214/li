@@ -1,0 +1,110 @@
+body{
+    width: 100%;
+    height: 100vh;
+    margin:0;
+    padding-top: 0;
+    background: #DCDCDC;
+}
+.content{
+    padding-top: 25px;;
+    width: 90%;
+    margin: 0 auto;
+    .example{
+        position: relative;
+
+        padding: 14px;
+        width: calc(100% - 28px);
+        background: #bbb;
+        input{
+            width: 80%;
+            height: 25px;
+            border-radius: 3px;
+            padding: 0px 49px;
+            border: 0;
+        
+        }
+        i{
+            padding: 0 13px;
+            position: absolute;
+            left: 19px;
+            top: 19px;
+        }
+        span{
+            position: absolute;
+            left: 85%;
+            top: 18px;
+            background: #888;
+            color: #fff;
+            padding: 1px 4px;
+            border-radius: 100%;
+            font-size: 10px;
+        }
+       
+    }
+    img{
+        width: 100%;
+        height: 256px;
+    }
+
+}
+.back{
+    background-color: #fff;
+    margin: 5px 0;
+    padding: 3px;
+}
+.main{
+    padding-top: 5px;
+    .list{
+        float: left;
+        width: 10%;
+    }
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li{
+            margin-bottom: 10px;
+        }
+        a{
+            text-decoration: none;
+            padding:5px;
+            color: #000;
+            background-color: #fff;;
+        }
+    }
+    #good{
+        float: left;
+        width:90%;
+        // height: 30vh;
+    }
+}
+.top i {
+    position: fixed;
+    top: 75%;
+    margin: 16px;
+    background: #bbb;
+    padding: 5px;
+    border-radius: 100%;
+    height: 16px;
+    width: 14px;
+    text-align: center;
+    font-size: 14px;
+}
+#good{
+    div div{
+        width: calc(100%/6 - 50px);
+        padding: 20px;
+        background: #fff;
+        text-align: center;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+    img{
+        height: 76px;
+    }
+    span{
+        display: block;
+        padding-top: 7px;    
+    }
+}
